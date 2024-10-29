@@ -1,0 +1,20 @@
+
+//Biblioteca Material
+npx ng add @angular/material
+
+//db.server para simular uma Api local
+npx json-server db.json
+http://localhost:3000/musicas
+
+
+// Se quiser criar projeto não instandalone 
+ng new versao17 --no-standalone
+
+//Variáveis de ambiente
+ng g environments
+
+//Components
+npx ng g c components/musicas 
+
+//Rodar app
+ng s

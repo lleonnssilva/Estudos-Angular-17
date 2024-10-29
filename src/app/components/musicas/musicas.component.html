@@ -1,0 +1,67 @@
+<div class="container">
+    <form [formGroup]="formularioMusicas">
+
+        <div>
+            <label>Id</label>
+            <input type="text" [disabled]="true" placeholder="ID" readonly  formControlName="id">
+        </div>
+
+        <div>
+            <label>Autor</label>
+            <input type="text"  placeholder="Autor" formControlName="autor" class="form-control">
+            @if (formularioMusicas.get('autor')?.hasError('required') && formularioMusicas.get('autor')?.touched){
+                <label class="alert">Campo obrigatório</label>
+            }
+            @if (formularioMusicas.get('autor')?.hasError('minlength') && formularioMusicas.get('autor')?.touched){
+                <label class="alert">Obrigatório no minímo 3 caractéres </label>
+            }
+        </div>
+
+        <div>
+            <label>Título</label>
+            <input type="text"  placeholder="Título" formControlName="titulo" class="form-control">
+            @if (formularioMusicas.get('titulo')?.hasError('required') && formularioMusicas.get('titulo')?.touched){
+                <label class="alert alert-warning">Campo obrigatório</label>
+            }
+            @if (formularioMusicas.get('titulo')?.hasError('minlength') && formularioMusicas.get('titulo')?.touched){
+                <label class="alert alert-warning">Obrigatório no minímo 3 caractéres </label>
+            }
+        </div>
+
+       <button 
+            [ngClass]="formularioMusicas.valid ? 'buttonAtivo': 'buttonInativo'" 
+            [disabled]="!formularioMusicas.valid"  
+            (click)="salvarMusica()">{{ this.formularioMusicas.value.id ? 'Salvar' : "Criar" }}
+        </button>
+
+       <button 
+            [ngClass]="!(this.formularioMusicas.value.id || this.formularioMusicas.value.titulo || this.formularioMusicas.value.autor) ? 'buttonInativo' : 'buttonAtivo'" 
+            [disabled]="!(this.formularioMusicas.value.id || this.formularioMusicas.value.titulo || this.formularioMusicas.value.autor)"   
+            (click)="limpar()">{{ this.formularioMusicas.value.id ? 'Cancelar' : "Limpar" }}
+       </button>
+
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author</th>
+                <th>Título</th>
+                <th class="th-form-musica">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let musica of musicas$ | async">
+                <th>{{musica.id}}</th>
+                <th>{{musica.autor}}</th>
+                <th>{{musica.titulo}}</th>
+                <th class="th-form-musica">
+                    <span (click)="selecionarMusica(musica)">Alterar</span> | 
+                    <span (click)="removerMusica(musica.id)">Remover</span>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

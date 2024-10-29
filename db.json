@@ -1,0 +1,44 @@
+{
+  "musicas": [
+    {
+      "id": "2",
+      "autor": "Charlie Brown Jr",
+      "titulo": "Meu Novo Mundo"
+    },
+    {
+      "id": "3",
+      "titulo": "Lugar Ao Sol",
+      "autor": "Charlie Brown Jr"
+    },
+    {
+      "id": "4",
+      "autor": "Mamonas Assassinas",
+      "titulo": "Pelados em Santos"
+    },
+    {
+      "id": "5",
+      "titulo": "Vira-Vira",
+      "autor": "Mamonas Assassinas"
+    },
+    {
+      "id": "6",
+      "titulo": "Jumento Celestino",
+      "autor": "Mamonas Assassinas"
+    },
+    {
+      "id": "7",
+      "titulo": "Sábado de Sol",
+      "autor": "Mamonas Assassinas"
+    },
+    {
+      "id": "8",
+      "autor": "Legião Urbana",
+      "titulo": "Faroeste Caboclo"
+    },
+    {
+      "id": "604",
+      "autor": "Mamonas Assassinas",
+      "titulo": "Pelados em Santos"
+    }
+  ]
+}
