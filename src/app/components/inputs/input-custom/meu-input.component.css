@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 70%;
+
+    &.ng-invalid.ng-touched {
+        input {
+            border-color: red;
+        }
+    }
+}
+

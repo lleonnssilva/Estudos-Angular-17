@@ -5,7 +5,12 @@
   "projects": {
     "angular-17": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "css",
+          "displayBlock": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

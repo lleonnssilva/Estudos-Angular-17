@@ -1,0 +1,10 @@
+
+<div>
+    <input type="text" [(ngModel)]="comecarComFieldValue" placeholder="Começar com">
+</div>
+<form #form="ngForm"> 
+    <input type="text" name="nome" ngModel required [starts-with]="comecarComFieldValue">
+
+</form>
+<p> isvalid {{form.valid}}</p>
+<button (click)="printForm()">PrintForm</button>

@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+   
+    <meu-input label="Logradouro:" formControlName="rua" />
+  
+    <div class="form-field">
+        <label>Número:</label>
+        <input type="number" formControlName="numero" placeholder="Número">
+    </div>
+
+    <div class="form-field">
+        <label>Complemento:</label>
+        <input type="text" formControlName="complemento" placeholder="Complemento">
+    </div>
+
+</form>
+<button (click)="formClick()">Print Form</button>
+<button (click)="formEnviar()" [disabled]="!form.valid">Enviar</button>
+
+<p> Formulário válido: {{form.valid}}</p>
